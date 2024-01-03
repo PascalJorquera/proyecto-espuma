@@ -150,9 +150,8 @@ def calcular():
        
 
         precio_aprox = round(precio_volumen, -2)
-        area_corte = largo * ancho
-        peso_corte = pesos[densidad] * (area_corte / (150 * 190))
-        peso_aprox = round(peso_corte, 2)
+        peso_corte = pesos[densidad] * (volumen / (150 * 190 * 10))
+        peso_aprox = round(peso_corte, 3)
 
         
         return render_template('resultado.html', precio=precio_aprox, peso=peso_aprox)
@@ -161,5 +160,5 @@ def calcular():
         return "Densidad no válida"
 
 if __name__ == '__main__':
-    app.run(debug=True, port = 5001)
+    app.run(debug=True, port = 59547)
 
